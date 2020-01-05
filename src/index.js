@@ -7,12 +7,17 @@ import About from './components/About';
 import Contact from './components/Contact';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import Home from './components/home';
-//import DashContent from './components/DashContent';
+import DashContent from './components/DashContent';
+import { Redirect } from 'react-router-dom'
 
 const routing = (
     <Router>
       <div>
-        <Route path="/" component={Home} />
+        <Route path="/" component={Home}/>
+        <Route exact path="/" render={() => (
+          <Redirect to="/home"/>
+        )}/>
+        <Route path="/home" component={DashContent} />
         <Route path="/products" component={Products} />
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />

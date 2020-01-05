@@ -13,6 +13,9 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 //import Container from '@material-ui/core/Container';
+import WspBtnFloat from './WspBtnFloat';
+//import WhatsAppIcon from '@material-ui/icons/WhatsApp';
+
 
 const useStyles = makeStyles(theme => ({
   list: {
@@ -100,7 +103,7 @@ export default function Home() {
   return ( 
     <div>
       {/* <Button onClick={toggleDrawer('left', true)}>Open Left</Button> */}
-      <AppBar position="static" className={classes.pricipalbar}>
+      <AppBar position="fixed" className={classes.pricipalbar}>
         <Toolbar>
           <IconButton onClick={toggleDrawer('left', true)} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
@@ -108,17 +111,17 @@ export default function Home() {
           <Typography variant="h6" className={classes.title}>
             NeoPLastic
           </Typography>
+          {/* <Typography variant="inherit">
+            <WhatsAppIcon color="action" fontSize="small"/>
+            +56966686531 - RAFA.MAURO@HOTMAIL.CL
+          </Typography> */}
         </Toolbar>
       </AppBar>
 
       <Drawer open={state.left} onClose={toggleDrawer('left', false)}>
         {sideList('left')}
       </Drawer>
-
-      {/* <Container maxWidth="sm">
-        <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} />
-      </Container> */}
-
+      <WspBtnFloat></WspBtnFloat>
     </div>
   );
 }
